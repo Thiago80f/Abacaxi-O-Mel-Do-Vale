@@ -1,0 +1,275 @@
+/* Geral */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #fefcea, #f1daab);
+    color: #333;
+}
+
+header {
+    background: linear-gradient(to bottom, #ff9800, #ff6f00);
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+header h1 {
+    font-size: 3rem;
+    animation: fadeInDown 1.5s ease;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    animation: fadeInUp 1.5s ease;
+}
+
+section {
+    padding: 50px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff6f00;
+    animation: fadeInUp 1s ease;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.image-card img {
+    max-width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.image-card img:hover {
+    transform: scale(1.1);
+}
+
+/* Contato */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+form input, form textarea {
+    width: 80%;
+    padding: 10px;
+    border: 2px solid #ff6f00;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form button {
+    background: #ff9800;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #e65100;
+}
+
+.contact-options {
+    margin-top: 20px;
+}
+
+.contact-options .btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.contact-options .btn.gmail {
+    background: #d93025;
+}
+
+.contact-options .btn.whatsapp {
+    background: #25d366;
+}
+
+.contact-options .btn:hover {
+    opacity: 0.8;
+}
+
+footer {
+    text-align: center;
+    background: #ff6f00;
+    color: white;
+    padding: 10px 0;
+}
+
+/* Animações */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.contact-options {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.contact-options .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.contact-options .btn.whatsapp {
+    background: #25d366;
+}
+
+.contact-options .btn.instagram {
+    background: #E1306C; /* Cor oficial do Instagram */
+}
+
+.contact-options .btn:hover {
+    opacity: 0.8;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f4b400; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    padding: 10px 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+body {
+    padding-top: 80px; /* Compensa o espaço do cabeçalho fixo */
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f4b400; /* Cor de fundo */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.navbar h1 {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #ffd700; /* Tom dourado ao passar o mouse */
+}
+
+body {
+    padding-top: 60px; /* Espaço para compensar o cabeçalho fixo */
+}
+
+/* Estilo para a galeria geral */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Estilo para fotos e vídeos */
+.image-card, .video-card {
+    width: calc(33.33% - 20px); /* Cada item ocupa 1/3 da largura com margem */
+    max-width: 300px;
+    aspect-ratio: 4 / 3; /* Proporção padrão para as fotos e vídeos */
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Estilo das imagens */
+.image-card img, .video-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+    .image-card, .video-card {
+        width: calc(50% - 20px); /* Cada item ocupa 1/2 da largura */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-card, .video-card {
+        width: 100%; /* Cada item ocupa toda a largura */
+    }
+}
