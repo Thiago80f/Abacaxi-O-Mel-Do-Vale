@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria - Abacaxi Meu do Vale</title>
-    <!-- CSS do LightGallery -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery.min.css">
+    <!-- Link para CSS do Lightbox -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -25,87 +25,68 @@
     <section id="gallery">
         <h2>Fotos</h2>
         <div class="gallery-container">
-            <a href="Abacaxi Pérola.png" data-lg-size="1600-1080" data-title="Abacaxi Pérola"
-                data-sub-html="<p>Abacaxi Pérola em nosso campo.</p>">
+            <!-- Cada imagem deve apontar para a versão ampliada no "href" -->
+            <a href="Abacaxi Pérola.png" data-lightbox="gallery" data-title="Abacaxi Pérola">
                 <img src="Abacaxi Pérola.png" alt="Abacaxi no Campo" loading="lazy">
             </a>
-            <a href="WhatsApp Image 2024-11-27 at 09.47.33 (1).jpeg" data-lg-size="1600-1080"
+            <a href="WhatsApp Image 2024-11-27 at 09.47.33 (1).jpeg" data-lightbox="gallery"
                 data-title="Colheita de Abacaxi">
                 <img src="WhatsApp Image 2024-11-27 at 09.47.33 (1).jpeg" alt="Colheita de Abacaxi" loading="lazy">
             </a>
-            <!-- Adicione mais imagens aqui -->
+            <a href="WhatsApp Image 2024-11-27 at 09.47.32 (2).jpeg" data-lightbox="gallery"
+                data-title="Plantação de Abacaxis">
+                <img src="WhatsApp Image 2024-11-27 at 09.47.32 (2).jpeg" alt="Plantação de Abacaxis" loading="lazy">
+            </a>
+            <a href="tjoo.png" data-lightbox="gallery" data-title="Abacaxi Pérola">
+                <img src="tjoo.png" alt="Abacaxi Pérola" loading="lazy">
+            </a>
+            <a href="rytt.png" data-lightbox="gallery" data-title="Abacaxi Pérola">
+                <img src="rytt.png" alt="Abacaxi Pérola" loading="lazy">
+            </a>
+            <a href="7000.png" data-lightbox="gallery" data-title="Abacaxi Pérola">
+                <img src="7000.png" alt="Abacaxi Pérola" loading="lazy">
+            </a>
+            <a href="2000.png" data-lightbox="gallery" data-title="Abacaxi Pérola">
+                <img src="2000.png" alt="Abacaxi Pérola" loading="lazy">
+            </a>
+            <a href="1000.png" data-lightbox="gallery" data-title="Abacaxi Pérola">
+                <img src="1000.png" alt="Abacaxi Pérola" loading="lazy">
+            </a>
         </div>
     </section>
 
     <section id="videos">
         <h2>Vídeos</h2>
         <div class="gallery-container">
-            <a href="Acredite em vc   @abacaxi_o_mel_do_vale.mp4" data-lightbox="videos" data-title="Acredite em você">
-                <video>
+            <div class="video-card">
+                <video controls>
                     <source src="Acredite em vc   @abacaxi_o_mel_do_vale.mp4" type="video/mp4">
                     Seu navegador não suporta a tag de vídeo.
                 </video>
-            </a>
-            <a href="@abacaxi_o_mel_do_vale   Uma cultura que está vindo com grande  força.mp4" data-lightbox="videos"
-                data-title="Cultura na nossa região">
-                <video>
+            </div>
+            <div class="video-card">
+                <video controls>
                     <source src="@abacaxi_o_mel_do_vale   Uma cultura que está vindo com grande  força.mp4"
                         type="video/mp4">
                     Seu navegador não suporta a tag de vídeo.
                 </video>
-            </a>
-            <a href="54545.mp4" data-lightbox="videos" data-title="Momentos especiais">
-                <video>
+            </div>
+            <div class="video-card">
+                <video controls>
                     <source src="54545.mp4" type="video/mp4">
                     Seu navegador não suporta a tag de vídeo.
                 </video>
-            </a>
+            </div>
         </div>
     </section>
 
     <footer>
         <p>© 2024 Abacaxi O Mel do Vale. Todos os direitos reservados.</p>
+        <P>Criado Pela Empresa Thinformatica :thiago De Amorim Moreira</P>
     </footer>
-<!-- Script para Lightbox -->
-<script>
-    // Adiciona suporte ao Lightbox para vídeos
-    document.querySelectorAll('a[data-lightbox="videos"]').forEach(link => {
-        link.addEventListener('click', event => {
-            event.preventDefault(); // Previne o comportamento padrão
 
-            // Cria o elemento modal
-            const modal = document.createElement('div');
-            modal.classList.add('lightbox-modal');
-            modal.innerHTML = `
-                <div class="lightbox-content">
-                    <video controls autoplay>
-                        <source src="${link.getAttribute('href')}" type="video/mp4">
-                        Seu navegador não suporta a tag de vídeo.
-                    </video>
-                    <button class="lightbox-close">×</button>
-                </div>
-            `;
-
-            // Adiciona o modal ao corpo da página
-            document.body.appendChild(modal);
-
-            // Fecha o modal ao clicar no botão
-            modal.querySelector('.lightbox-close').addEventListener('click', () => {
-                modal.remove();
-            });
-
-            // Fecha o modal ao clicar fora do vídeo
-            modal.addEventListener('click', e => {
-                if (e.target === modal) {
-                    modal.remove();
-                }
-            });
-        });
-    });
-</script>
-
-   
-    </script>
+    <!-- Scripts para Lightbox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 </body>
 
 </html>
