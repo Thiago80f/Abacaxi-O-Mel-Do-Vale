@@ -55,24 +55,53 @@
         </div>
     </section>
 
+  DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria - Abacaxi Meu do Vale</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>Abacaxi Meu do Vale</h1>
+            <ul>
+                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="#gallery">Fotos</a></li>
+                <li><a href="#videos">Vídeos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="gallery">
+        <h2>Fotos</h2>
+        <div class="gallery-container">
+            <!-- Galeria de fotos mantida -->
+        </div>
+    </section>
+
     <section id="videos">
         <h2>Vídeos</h2>
         <div class="gallery-container">
             <div class="video-card">
-                <video controls>
+                <video>
                     <source src="Acredite em vc   @abacaxi_o_mel_do_vale.mp4" type="video/mp4">
                     Seu navegador não suporta a tag de vídeo.
                 </video>
             </div>
             <div class="video-card">
-                <video controls>
+                <video>
                     <source src="@abacaxi_o_mel_do_vale   Uma cultura que está vindo com grande  força.mp4"
                         type="video/mp4">
                     Seu navegador não suporta a tag de vídeo.
                 </video>
             </div>
             <div class="video-card">
-                <video controls>
+                <video>
                     <source src="54545.mp4" type="video/mp4">
                     Seu navegador não suporta a tag de vídeo.
                 </video>
@@ -82,11 +111,38 @@
 
     <footer>
         <p>© 2024 Abacaxi O Mel do Vale. Todos os direitos reservados.</p>
+        <p>Criado pela Empresa Thinformatica: Thiago De Amorim Moreira</p>
+    </footer>
+
+    <script>
+        // Seleciona todos os vídeos na galeria
+        const videos = document.querySelectorAll('.gallery-container video');
+
+        // Adiciona um evento de clique para cada vídeo
+        videos.forEach(video => {
+            video.addEventListener('click', () => {
+                if (video.requestFullscreen) {
+                    video.requestFullscreen(); // Expande para tela cheia
+                } else if (video.webkitRequestFullscreen) { // Para navegadores WebKit
+                    video.webkitRequestFullscreen();
+                } else if (video.msRequestFullscreen) { // Para navegadores da Microsoft
+                    video.msRequestFullscreen();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+    <footer>
+        <p>© 2024 Abacaxi O Mel do Vale. Todos os direitos reservados.</p>
         <P>Criado Pela Empresa Thinformatica :thiago De Amorim Moreira</P>
     </footer>
 
     <!-- Scripts para Lightbox -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+   
 </body>
 
 </html>
