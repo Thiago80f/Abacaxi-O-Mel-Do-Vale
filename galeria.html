@@ -5,9 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria - Abacaxi Meu do Vale</title>
-    <!-- Link para CSS do Lightbox -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilo para o overlay do modo picture */
+        .video-overlay {
+            display: none;
+            /* Escondido por padrão */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.8);
+            /* Fundo escuro translúcido */
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-overlay video {
+            max-width: 90%;
+            max-height: 70%;
+            /* Mantém o vídeo visível e centralizado */
+        }
+
+        .video-overlay .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            z-index: 1100;
+        }
+    </style>
 </head>
 
 <body>
@@ -55,35 +86,6 @@
         </div>
     </section>
 
-  DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria - Abacaxi Meu do Vale</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-    <header>
-        <nav class="navbar">
-            <h1>Abacaxi Meu do Vale</h1>
-            <ul>
-                <li><a href="index.html">Página Inicial</a></li>
-                <li><a href="#gallery">Fotos</a></li>
-                <li><a href="#videos">Vídeos</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="gallery">
-        <h2>Fotos</h2>
-        <div class="gallery-container">
-            <!-- Galeria de fotos mantida -->
-        </div>
-    </section>
-
     <section id="videos">
         <h2>Vídeos</h2>
         <div class="gallery-container">
@@ -109,6 +111,12 @@
         </div>
     </section>
 
+    <!-- Contêiner de Overlay -->
+    <div class="video-overlay" id="videoOverlay">
+        <span class="close-btn" id="closeOverlay">&times;</span>
+        <video id="overlayVideo" controls></video>
+    </div>
+
     <footer>
         <p>© 2024 Abacaxi O Mel do Vale. Todos os direitos reservados.</p>
         <p>Criado pela Empresa Thinformatica: Thiago De Amorim Moreira</p>
@@ -117,32 +125,26 @@
     <script>
         // Seleciona todos os vídeos na galeria
         const videos = document.querySelectorAll('.gallery-container video');
+        const overlay = document.getElementById('videoOverlay');
+        const overlayVideo = document.getElementById('overlayVideo');
+        const closeOverlay = document.getElementById('closeOverlay');
 
-        // Adiciona um evento de clique para cada vídeo
+        // Função para abrir o vídeo no modo picture
         videos.forEach(video => {
             video.addEventListener('click', () => {
-                if (video.requestFullscreen) {
-                    video.requestFullscreen(); // Expande para tela cheia
-                } else if (video.webkitRequestFullscreen) { // Para navegadores WebKit
-                    video.webkitRequestFullscreen();
-                } else if (video.msRequestFullscreen) { // Para navegadores da Microsoft
-                    video.msRequestFullscreen();
-                }
+                overlay.style.display = 'flex'; // Mostra o overlay
+                overlayVideo.src = video.querySelector('source').src; // Carrega o vídeo clicado
+                overlayVideo.play(); // Inicia a reprodução
             });
         });
+
+        // Fecha o overlay
+        closeOverlay.addEventListener('click', () => {
+            overlay.style.display = 'none'; // Esconde o overlay
+            overlayVideo.pause(); // Pausa o vídeo
+            overlayVideo.src = ''; // Remove o vídeo do overlay
+        });
     </script>
-</body>
-
-</html>
-
-    <footer>
-        <p>© 2024 Abacaxi O Mel do Vale. Todos os direitos reservados.</p>
-        <P>Criado Pela Empresa Thinformatica :thiago De Amorim Moreira</P>
-    </footer>
-
-    <!-- Scripts para Lightbox -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-   
 </body>
 
 </html>
